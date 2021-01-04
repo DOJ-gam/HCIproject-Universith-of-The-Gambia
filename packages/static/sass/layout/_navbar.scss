@@ -1,0 +1,21 @@
+
+.navbar-container{
+
+    background-color: #fff;
+    height: 10rem;
+    box-shadow: 1px 1px 4px 1px #252525;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.logo{
+    transition: all .8s;
+    &:hover{
+
+        transform: translateY(2rem) translateX(5rem) scale(1.6);
+        // animation-name: moveInLeft;
+        // animation-duration: 2s;
+        // animation-timing-function: ease-out;
+    }
+}
+

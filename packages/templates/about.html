@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% include "header.html" %}
+
+
+{% block content %}
+
+<div class="header header--about">
+
+    <div class=" ">
+        
+        <h1 class="text-info text-center corona_card">About This Website</h1>
+        
+        <p>This is a Covid-19 Tracking Website made by <a href="">Omar Jeng</a> and  <a href="">Amie Badjie</a>, for a project at The 
+            <a href=""> University of The Gambia</a> in the Course Human Computer Interaction (HCI).</p>   
+    
+    </div>
+
+    <div class="about_us row p-3">
+
+        <div class="col-sm-12 col-md-12 col-lg-11">
+            <h1 class="text-info text-center corona_card">MEET OUR TEAM</h1>
+        </div>
+        
+        <!-- <div class="col-md-6 col-sm-12 col-lg-6 ">         
+            <div class="about_card doj" style="width: 70%;">
+                <div class="about_header " style="width: 100%;">
+                    <img src="{{url_for('static', filename = 'images/doj.jpeg')}}" alt="" width="100%">
+                </div>
+                <div class="about_body">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt accusantium quas aut veritatis, non rem ducimus.
+                </div>
+            </div>     
+        </div> 
+
+        
+        <div class="col-md-6 col-sm-12 col-lg-6">         
+            <div class="about_card doj" style="width: 70%;">
+                <div class="about_header " style="width: 100%;">
+                    <img src="{{url_for('static', filename = 'images/doj.jpeg')}}" alt="" width="100%">
+                </div>
+                <div class="about_body">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt accusantium quas aut veritatis, non rem ducimus.
+                </div>
+            </div>     
+        </div>  -->
+
+
+    </div>
+
+</div>
+
+
+<div class="container d-flex align-items-center justify-content-center">
+
+    <div class="panel panel--1">
+        <h1>Amie Badjie</h1>
+    </div>
+    
+    <div class="panel panel--2 active">
+        <h1 class="bg-secondary d-inline-block w-50 text-center">Contact our Team</h1>
+    </div>
+
+    <div class="panel panel--3">
+        <h1>Omar Jeng alias DOJ</h1>
+    </div>
+    
+
+</div>
+
+<script>
+    //querySelectorAll will put them all in a nodeList(like an array)
+const panels = document.querySelectorAll('.panel');
+
+// console.log(panels);
+
+panels.forEach( (panel)=> {
+   
+    // console.log(panel);
+    
+    panel.addEventListener('click', () => {
+        
+        // console.log(123);
+        removeActiveClasses();
+        panel.classList.add('active');
+    });
+
+});
+
+
+function removeActiveClasses(){
+    panels.forEach( (panel) => {
+        panel.classList.remove('active');
+    })
+}
+</script>
+
+{% endblock content %}
+    

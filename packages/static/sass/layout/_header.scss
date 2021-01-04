@@ -1,0 +1,36 @@
+
+
+.header{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 1.5rem;
+    margin: 0;
+    margin-top: 7.1rem;
+    position: relative;
+
+    &--home{
+
+        margin-left: -3rem;
+        margin-right: -3rem;
+        height: 60vh;
+        background-image: linear-gradient(
+            to right bottom,
+            rgba(255, 9, 9, 0.8),
+            rgba(0, 152, 253, 0.8),
+            rgba(40, 180, 131, 0.8)
+            ),  
+            url(../images/b.png);
+            background-size: cover;
+            background-position: center;
+            clip-path: polygon(0 0, 100% 0, 100% 50vh, 0 100%);
+    }
+
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+

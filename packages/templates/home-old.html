@@ -1,0 +1,453 @@
+
+{% extends 'base.html' %}
+{% include "header.html" %}
+
+{% block large_content %}
+    
+      <!-- <div class="row main-header">
+
+        <div class="col-lg-6 col-sm-12 col-md-6 header-container">     
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad voluptatem accusamus quis blanditiis id consectetur, omnis temporibus natus aspernatur ullam eaque, magnam corporis quidem cumque minima doloribus officiis eius distinctio repellat, vero magni alias. Velit eius cum voluptatum debitis obcaecati labore tempore est, explicabo corrupti ratione veniam harum fuga rerum blanditiis. Voluptatum quaerat, ea dicta nobis ipsa corporis nemo cumque?
+          lorem1000
+        </div>
+
+        <div class="col-lg-6 col-sm-12 col-md-6 header-right-img header-container"></div>
+
+      </div> -->
+
+      <header class="header main-header">
+        <div class="text-box">
+          <h1 class="primary-heading">
+            <span class="primary-heading-main">UTG Covid-19 Tracker</span>
+            <span class="primary-heading-sub">For all your latest and past covid-19 data!</span>
+          </h1>
+          <a href="#" class="btn btn-white btn-animated">Contact Our Team</a>
+        </div>
+      </header>
+
+      <div class="col-md-12 col-lg-12 col-sm-12">
+        <div class="gambia_card">
+        
+          <div class="card_header gam_header">
+              <a href="">
+                  <h2>THE GAMBIA</h2>
+              </a>            
+          </div>
+  
+          <div class="card_body">
+            <div class="row">
+
+              <div class="col-md-4 col-sm-12 col-lg-2 p-2">
+                <div class="total_cases cases">
+                  <h4>Total Cases</h4>
+                  <p>30</p>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-12 col-lg-2 p-2">
+              <div class="active_cases cases">
+                <h4>Active Cases</h4>
+                <p>10</p>
+              </div>
+              </div>
+
+              <div class="col-md-4 col-sm-12 col-lg-2 p-2">
+              <div class="recovered_cases cases">
+                <h4>Recovered </h4>
+                <p>20</p>
+              </div>
+              </div>
+
+              <div class="col-md-4 col-sm-12 col-lg-2 p-2">
+              <div class="total_deaths cases">
+                <h4>Total Deaths</h4>
+                <p>0</p>
+              </div>
+              </div>
+
+              <div class="col-md-4 col-sm-12 col-lg-2 p-2">
+              <div class="total_deaths cases">
+                <h4>Total Tests</h4>
+                <p>1000</p>
+              </div>
+              </div>
+
+              <div class="col-md-4 col-sm-12 col-lg-2 p-2">
+              <div class="total_population cases">
+                <h4>Population</h4>
+                <p>1234430</p>
+              </div>
+              </div>
+              
+            </div>
+          </div>
+
+  
+      </div>
+      </div>
+      
+<div class="row doj_cards">
+  
+  <div class="col-sm-1 col-md-3 col-lg-3">
+    <div class="corona_card " >
+      
+      <div class="card-front">
+        <div class="card_header">
+          <a href="/global">
+            <h6 class="text-info">
+              GLOBAL STATISTICS
+              <img src="{{url_for('static', filename='images/doctor-globe.svg')}}" alt="" height="70px">
+            </h6>
+          </a>
+        </div>
+        
+        <div class="card_body">
+          
+          <div class="top">
+            
+            <div class="total_cases cases">
+              <h4 class="text-info">Total Cases</h4>
+              <p>100</p>
+            </div>
+            <div class="active_cases cases">
+              <h4 class="text-warning">Active Cases</h4>
+              <p>30</p>
+            </div>
+            
+          </div>
+          
+          <div class="bottom">
+            
+            <div class="total_deaths cases">
+              <h4 class="text-danger">Total Deaths</h4>
+              <p>1</p>
+            </div>
+            <div class="revovered_cases cases">
+              <h4 class="text-success">Recovered Cases</h4>
+              <p>69</p>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+        <div class="card_footer">
+          <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+        </div>
+
+      </div>
+      <div class="card-back">
+          
+      </div>
+
+    </div> 
+  </div>
+
+  
+  <div class="col-md-3 col-sm-1 col-lg-3">
+    <div class="corona_card " >
+      
+      <div class="card_header">
+        <a href="">
+          <h6>
+            AFRICA
+            <img src="{{url_for('static', filename='images/africa.png')}}" alt="" height="70px">
+          </h6>
+        </a>
+      </div>
+      
+      <div class="card_body">
+        
+        <div class="top">
+          
+          <div class="total_cases cases">
+            <h4 class="text-info">Total Cases</h4>
+            <p>100</p>
+          </div>
+          <div class="active_cases cases">
+            <h4 class="text-warning">Active Cases</h4>
+            <p>30</p>
+          </div>
+          
+        </div>
+        
+        <div class="bottom">
+          
+          <div class="total_deaths cases">
+            <h4 class="text-danger">Total Deaths</h4>
+            <p>1</p>
+          </div>
+          <div class="revovered_cases cases">
+            <h4 class="text-success">Recovered Cases</h4>
+            <p>69</p>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="card_footer">
+        <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+      </div>
+        
+    </div> 
+  </div>
+
+  
+  <div class="col-md-3 col-sm-1 col-lg-3">
+    <div class="corona_card " >
+      
+      <div class="card_header">
+        <a href="">
+          <h6>
+            EUROPE
+            <img src="{{url_for('static', filename='images/europe.png')}}" alt="" height="70px">
+          </h6>
+        </a>
+      </div>
+      
+      <div class="card_body">
+        
+        <div class="top">
+          
+          <div class="total_cases cases">
+            <h4 class="text-info">Total Cases</h4>
+            <p>100</p>
+          </div>
+          <div class="active_cases cases">
+            <h4 class="text-warning">Active Cases</h4>
+            <p>30</p>
+          </div>
+          
+        </div>
+        
+        <div class="bottom">
+          
+          <div class="total_deaths cases">
+            <h4 class="text-danger">Total Deaths</h4>
+            <p>1</p>
+          </div>
+          <div class="revovered_cases cases">
+            <h4 class="text-success">Recovered Cases</h4>
+            <p>69</p>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="card_footer">
+        <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+      </div>
+        
+    </div> 
+  </div>
+
+  
+  <div class="col-md-3 col-sm-1 col-lg-3">
+    <div class="corona_card " >
+      
+      <div class="card_header">
+        <a href="">
+          <h6>
+            ASIA
+            <img src="{{url_for('static', filename='images/asia.png')}}" alt="" height="70px">
+          </h6>
+        </a>
+      </div>
+      
+      <div class="card_body">
+        
+        <div class="top">
+          
+          <div class="total_cases cases">
+            <h4 class="text-info">Total Cases</h4>
+            <p>100</p>
+          </div>
+          <div class="active_cases cases">
+            <h4 class="text-warning">Active Cases</h4>
+            <p>30</p>
+          </div>
+          
+        </div>
+        
+        <div class="bottom">
+          
+          <div class="total_deaths cases">
+            <h4 class="text-danger">Total Deaths</h4>
+            <p>1</p>
+          </div>
+          <div class="revovered_cases cases">
+            <h4 class="text-success">Recovered Cases</h4>
+            <p>69</p>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="card_footer">
+        <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+      </div>
+        
+    </div> 
+  </div>
+
+
+</div> 
+<div class="row doj_cards america_card corona_card">
+
+  <!-- North America -->
+  <div class="col-sm-12 col-md-3 col-lg-3">
+    <div class="corona_card " >
+    
+      <div class="card_header">
+        <a href="">
+          <h6>
+            NORTH AMERICA
+            <img src="{{url_for('static', filename='images/america.png')}}" alt="" height="70px">
+          </h6>
+        </a>
+      </div>
+      
+      <div class="card_body">
+        
+        <div class="top">
+          
+          <div class="total_cases cases">
+            <h4 class="text-info">Total Cases</h4>
+            <p>100</p>
+          </div>
+          <div class="active_cases cases">
+            <h4 class="text-warning">Active Cases</h4>
+            <p>30</p>
+          </div>
+          
+        </div>
+        
+        <div class="bottom">
+          
+          <div class="total_deaths cases">
+            <h4 class="text-danger">Total Deaths</h4>
+            <p>1</p>
+          </div>
+          <div class="revovered_cases cases">
+            <h4 class="text-success">Recovered Cases</h4>
+            <p>69</p>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="card_footer">
+        <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+      </div>
+        
+    </div> 
+  </div>
+
+  <!-- All America -->
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <div class="corona_card " >
+    
+      <div class="card_header">
+        <a href="">
+          <h6>
+            ALL AMERICA
+            <img src="{{url_for('static', filename='images/all_america.svg')}}" alt="" height="70px">
+          </h6>
+        </a>
+      </div>
+      
+      <div class="card_body">
+        
+        <div class="top">
+          
+          <div class="total_cases cases">
+            <h4 class="text-info">Total Cases</h4>
+            <p>100</p>
+          </div>
+          <div class="active_cases cases">
+            <h4 class="text-warning">Active Cases</h4>
+            <p>30</p>
+          </div>
+          
+        </div>
+        
+        <div class="bottom">
+          
+          <div class="total_deaths cases">
+            <h4 class="text-danger">Total Deaths</h4>
+            <p>1</p>
+          </div>
+          <div class="revovered_cases cases">
+            <h4 class="text-success">Recovered Cases</h4>
+            <p>69</p>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="card_footer">
+        <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+      </div>
+        
+    </div> 
+  </div>
+  
+  <!-- South America -->
+  <div class="col-sm-12 col-md-3 col-lg-3">
+    <div class="corona_card " >
+    
+      <div class="card_header">
+        <a href="">
+          <h6>
+            SOUTH AMERICA
+            <img src="{{url_for('static', filename='images/america.png')}}" alt="" height="70px">
+          </h6>
+        </a>
+      </div>
+      
+      <div class="card_body">
+        
+        <div class="top">
+          
+          <div class="total_cases cases">
+            <h4 class="text-info">Total Cases</h4>
+            <p>100</p>
+          </div>
+          <div class="active_cases cases">
+            <h4 class="text-warning">Active Cases</h4>
+            <p>30</p>
+          </div>
+          
+        </div>
+        
+        <div class="bottom">
+          
+          <div class="total_deaths cases">
+            <h4 class="text-danger">Total Deaths</h4>
+            <p>1</p>
+          </div>
+          <div class="revovered_cases cases">
+            <h4 class="text-success">Recovered Cases</h4>
+            <p>69</p>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      <div class="card_footer">
+        <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+      </div>
+        
+    </div> 
+  </div>
+
+</div>
+
+{% include "footer.html" %}
+{% endblock large_content %}

@@ -1,0 +1,708 @@
+{% extends 'base.html' %}
+{% include "header.html" %}
+
+{% block large_content %}
+
+  <header class="header header--home">
+      <div class="header__text-box">
+        <h1 class="header-text">
+          <span class="header-text--main">UTG Covid-19 Tracker</span>
+          <span class="header-text--sub">For all your latest and past covid-19 data!</span>
+        </h1>
+        <a href="#" class="btn btn--white btn--animated" data-toggle="modal" data-target="#contact">Contact Our Team</a>
+      </div>
+  </header>
+
+  <!-- Gambia -->
+  <div class="col-md-12 col-lg-12 col-sm-12">
+    <div class="doj-card--gambia">
+    
+      <div class="doj-card__header--gam ">
+          <a href="/countries/gambia">
+              <h2>THE GAMBIA</h2>
+          </a>            
+      </div>
+
+      <div class="doj-card__body doj-card__body--gam">
+        <div class="row">
+
+          <div class="col-md-4 col-sm-12 col-lg-2 ">
+            <div class="doj-card__cases doj-card--total-cases ">
+              <h4>New Cases</h4>
+              <p>
+                {{"{:,.0f}".format(gambia['todayCases'])}}
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 col-lg-2 ">
+            <div class="doj-card__cases doj-card--total-cases ">
+              <h4>Total Cases</h4>
+              <p>
+                {{"{:,.0f}".format(gambia['cases'])}}
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 col-lg-2 ">
+          <div class="doj-card__cases doj-card--active-cases">
+            <h4>Active Cases</h4>
+            <p>
+              {{"{:,.0f}".format(gambia['active'])}}
+            </p>
+          </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 col-lg-2 ">
+          <div class="doj-card__cases doj-card--recovered-cases">
+            <h4>Recovered </h4>
+            <p>
+              {{"{:,.0f}".format(gambia['recovered'])}}
+            </p>
+          </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 col-lg-2 ">
+          <div class="doj-card__cases doj-card--total-deaths">
+            <h4>Total Deaths</h4>
+            <p>
+              {{"{:,.0f}".format(gambia['deaths'])}}
+            </p>
+          </div>
+          </div>
+
+          <div class="col-md-4 col-sm-12 col-lg-2 ">
+          <div class="doj-card__cases doj-card--total-population">
+            <h4>Population</h4>
+            <p>
+              {{"{:,.0f}".format(gambia['population'])}}
+            </p>
+          </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+  </div>
+  </div>
+  <!-- Gambia -->
+  
+<!-- All Cards contaier -->
+  <div class="row">
+
+  <!-- Global Stats -->
+    <div class="col-sm-1 col-md-3 col-lg-3 "> 
+      <div class="doj-card">
+        
+        <div class="doj-card__side doj-card__side--front">
+          <div class="doj-card__picture doj-card__picture--1">
+            &nbsp;
+          </div>
+          <h4 class="doj-card__header">
+            <span class="doj-card__header-span doj-card__header-span--1 text-primary">
+                <a href="/global"> GLOBAL STATISTICS </a>
+              <img src="{{url_for('static', filename='images/doctor-globe.svg')}}" alt="" height="70px">
+            </span>
+          </h4>
+          <div class="doj-card__body">
+
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-dark">New Cases</h4>
+              <p>
+                {{"{:,.0f}".format(global_data['todayCases'])}}
+              </p>
+            </div>
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-info">Total Cases</h4>
+              <p>
+                {{"{:,.0f}".format(global_data['cases'])}}
+              </p>
+            </div>
+            <div class="active_cases doj-card__cases">
+              <h4 class="text-warning">Active Cases</h4>
+              <p>
+                {{"{:,.0f}".format(global_data['active'])}}
+              </p>
+            </div>
+            <div class="total_deaths doj-card__cases">
+              <h4 class="text-danger">Total Deaths</h4>
+              <p>
+                {{"{:,.0f}".format(global_data['deaths'])}}
+              </p>
+            </div>
+            <div class="revovered_cases doj-card__cases">
+              <h4 class="text-success">Recovered Cases</h4>
+              <p>
+                {{"{:,.0f}".format(global_data['recovered'])}}
+              </p>
+            </div>
+          </div> <!--front-card-body-->   
+          <div class="doj-card__footer">
+            <small class="text-secondary" id="global_update"> Last Updated: 21 November 2020 </small>
+          </div> 
+        </div>  <!--card-front end-->
+        
+        <div class="doj-card__side doj-card__side--back doj-card__side--back-1 ">
+          <div class="card__cta"> <!--CTA== call to action.. (CTA box)-->
+            
+            <h3 class="text-light bg-danger">{{all_countries | length}} Countries Affected Affected World Wide</h3>
+
+            <a href="/global" class="btn btn--white btn-card">View More on Global!</a>
+          </div>
+        </div> <!--card-back ends-->
+
+      </div>
+    </div>
+    <!-- Global Stats -->
+
+  <!-- Africa  -->
+    <div class="col-sm-1 col-md-3 col-lg-3 "> 
+      <div class="doj-card">
+        
+        <div class="doj-card__side doj-card__side--front">
+          <div class="doj-card__picture doj-card__picture--2">
+            &nbsp;
+          </div>
+          <h4 class="doj-card__header">
+            <span class="doj-card__header-span doj-card__header-span--1 text-primary">
+                <a href="/africa">AFRICA</a>
+              <img src="{{url_for('static', filename='images/africa.png')}}" alt="" height="70px">
+            </span>
+          </h4>
+          <div class="doj-card__body">
+
+
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-dark">New Cases</h4>
+              <p>
+                {{"{:,.0f}".format(africa['todayCases'])}}
+              </p>
+            </div>
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-info">Total Cases</h4>
+              <p>
+                {{"{:,.0f}".format(africa['cases'])}}
+              </p>
+            </div>
+            <div class="active_cases doj-card__cases">
+              <h4 class="text-warning">Active Cases</h4>
+              <p>
+                {{"{:,.0f}".format(africa['active'])}}
+              </p>
+            </div>
+            <div class="total_deaths doj-card__cases">
+              <h4 class="text-danger">Total Deaths</h4>
+              <p>
+                {{"{:,.0f}".format(africa['deaths'])}}
+              </p>
+            </div>
+            <div class="revovered_cases doj-card__cases">
+              <h4 class="text-success">Recovered Cases</h4>
+              <p>
+                {{"{:,.0f}".format(africa['recovered'])}}
+              </p>
+            </div>
+          </div> <!--front-card-body-->   
+          <div class="doj-card__footer">
+            <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+          </div> 
+        </div>  <!--card-front end-->
+        
+        <div class="doj-card__side doj-card__side--back doj-card__side--back-1 ">
+          <div class="card__cta"> <!--CTA== call to action.. (CTA box)-->
+            
+            <h3 class="text-light bg-danger">{{africa["countries"] | length}} Countries Affected Affected in Africa</h3>
+
+            <a href="/global" class="btn btn--white btn-card">View More on Africa!</a>
+          </div>
+        </div> <!--card-back ends-->
+
+      </div>
+    </div>
+    <!-- Africa -->
+
+  <!-- Europe -->
+    <div class="col-sm-1 col-md-3 col-lg-3 "> 
+      <div class="doj-card">
+        
+        <div class="doj-card__side doj-card__side--front">
+          <div class="doj-card__picture doj-card__picture--3">
+            &nbsp;
+          </div>
+          <h4 class="doj-card__header">
+            <span class="doj-card__header-span doj-card__header-span--1 text-primary">
+                <a href="/europe">EUROPE</a>
+              <img src="{{url_for('static', filename='images/europe.png')}}" alt="" height="70px">
+            </span>
+          </h4>
+          <div class="doj-card__body">
+
+
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-dark">New Cases</h4>
+              <p>
+                {{"{:,.0f}".format(europe['todayCases'])}}
+              </p>
+            </div>
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-info">Total Cases</h4>
+              <p>
+                {{"{:,.0f}".format(europe['cases'])}}
+              </p>
+            </div>
+            <div class="active_cases doj-card__cases">
+              <h4 class="text-warning">Active Cases</h4>
+              <p>
+                {{"{:,.0f}".format(europe['active'])}}
+              </p>
+            </div>
+            <div class="total_deaths doj-card__cases">
+              <h4 class="text-danger">Total Deaths</h4>
+              <p>
+                {{"{:,.0f}".format(europe['deaths'])}}
+              </p>
+            </div>
+            <div class="revovered_cases doj-card__cases">
+              <h4 class="text-success">Recovered Cases</h4>
+              <p>
+                {{"{:,.0f}".format(europe['recovered'])}}
+              </p>
+            </div>
+          </div> <!--front-card-body-->   
+          <div class="doj-card__footer">
+            <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+          </div> 
+        </div>  <!--card-front end-->
+        
+        <div class="doj-card__side doj-card__side--back doj-card__side--back-1 ">
+          <div class="card__cta"> <!--CTA== call to action.. (CTA box)-->
+            
+            <h3 class="text-light bg-danger">{{europe["countries"] | length}} Countries Affected Affected in Europe</h3>
+
+            <a href="/global" class="btn btn--white btn-card">View More on Europe!</a>
+          </div>
+        </div> <!--card-back ends-->
+
+      </div>
+    </div>
+    <!-- Europe -->
+
+  <!-- Asia -->
+    <div class="col-sm-1 col-md-3 col-lg-3 "> 
+      <div class="doj-card">
+        
+        <div class="doj-card__side doj-card__side--front">
+          <div class="doj-card__picture doj-card__picture--1">
+            &nbsp;
+          </div>
+          <h4 class="doj-card__header">
+            <span class="doj-card__header-span doj-card__header-span--1 text-primary">
+                <a href="/asia">ASIA</a>
+              <img src="{{url_for('static', filename='images/asia.png')}}" alt="" height="70px">
+            </span>
+          </h4>
+          <div class="doj-card__body">
+
+
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-dark">New Cases</h4>
+              <p>
+                {{"{:,.0f}".format(asia['todayCases'])}}
+              </p>
+            </div>
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-info">Total Cases</h4>
+              <p>
+                {{"{:,.0f}".format(asia['cases'])}}
+              </p>
+            </div>
+            <div class="active_cases doj-card__cases">
+              <h4 class="text-warning">Active Cases</h4>
+              <p>
+                {{"{:,.0f}".format(asia['active'])}}
+              </p>
+            </div>
+            <div class="total_deaths doj-card__cases">
+              <h4 class="text-danger">Total Deaths</h4>
+              <p>
+                {{"{:,.0f}".format(asia['deaths'])}}
+              </p>
+            </div>
+            <div class="revovered_cases doj-card__cases">
+              <h4 class="text-success">Recovered Cases</h4>
+              <p>
+                {{"{:,.0f}".format(asia['recovered'])}}
+              </p>
+            </div>
+          </div> <!--front-card-body-->   
+          <div class="doj-card__footer">
+            <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+          </div> 
+        </div>  <!--card-front end-->
+        
+        <div class="doj-card__side doj-card__side--back doj-card__side--back-1 ">
+          <div class="card__cta"> <!--CTA== call to action.. (CTA box)-->
+            
+            <h3 class="text-light bg-danger">{{asia["countries"] | length}} Countries Affected Affected in Asia</h3>
+
+            <a href="/global" class="btn btn--white btn-card">View More on Asia!</a>
+          </div>
+        </div> <!--card-back ends-->
+
+      </div>
+    </div>
+    <!-- ASIA -->
+
+  <!-- North America -->
+    <div class="col-sm-1 col-md-3 col-lg-3 "> 
+      <div class="doj-card">
+        
+        <div class="doj-card__side doj-card__side--front">
+          <div class="doj-card__picture doj-card__picture--2">
+            &nbsp;
+          </div>
+          <h4 class="doj-card__header">
+            <span class="doj-card__header-span doj-card__header-span--1 text-primary">
+                <a href="#">NORTH AMERICA</a>
+              <img src="{{url_for('static', filename='images/nAmerica.jpg')}}" alt="" height="70px">
+            </span>
+          </h4>
+          <div class="doj-card__body">
+
+
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-dark">New Cases</h4>
+              <p>
+                {{"{:,.0f}".format(north_america['todayCases'])}}
+              </p>
+            </div>
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-info">Total Cases</h4>
+              <p>
+                {{"{:,.0f}".format(north_america['cases'])}}
+              </p>
+            </div>
+            <div class="active_cases doj-card__cases">
+              <h4 class="text-warning">Active Cases</h4>
+              <p>
+                {{"{:,.0f}".format(north_america['active'])}}
+              </p>
+            </div>
+            <div class="total_deaths doj-card__cases">
+              <h4 class="text-danger">Total Deaths</h4>
+              <p>
+                {{"{:,.0f}".format(north_america['deaths'])}}
+              </p>
+            </div>
+            <div class="revovered_cases doj-card__cases">
+              <h4 class="text-success">Recovered Cases</h4>
+              <p>
+                {{"{:,.0f}".format(north_america['recovered'])}}
+              </p>
+            </div>
+          </div> <!--front-card-body-->   
+          <div class="doj-card__footer">
+            <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+          </div> 
+        </div>  <!--card-front end-->
+        
+        <div class="doj-card__side doj-card__side--back doj-card__side--back-1 ">
+          <div class="card__cta"> <!--CTA== call to action.. (CTA box)-->
+            
+            <h3 class="text-light bg-danger">{{north_america["countries"] | length}} Countries Affected Affected in North America</h3>
+
+            <a href="/global" class="btn btn--white btn-card">View More on North America!</a>
+          </div>
+        </div> <!--card-back ends-->
+
+      </div>
+    </div>
+    <!-- North America -->
+
+  <!-- All America -->
+    <div class="col-sm-1 col-md-6 col-lg-6 "> 
+      <div class="doj-card">
+        
+        <div class="doj-card__side doj-card__side--front">
+          <div class="doj-card__picture doj-card__picture--3" style="height: 14rem; background-position: bottom;">
+            &nbsp;
+          </div>
+          <h4 class="doj-card__header">
+            <span class="doj-card__header-span doj-card__header-span--1 text-primary">
+                <a href="#">ALL AMERICA</a>
+              <img src="{{url_for('static', filename='images/all_america.svg')}}" alt="" height="70px">
+            </span>
+          </h4>
+          <div class="doj-card__body">
+
+
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-dark">New Cases</h4>
+              <p>
+                {{"{:,.0f}".format(america['todayCases'])}}
+              </p>
+            </div>
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-info">Total Cases</h4>
+              <p>
+                {{"{:,.0f}".format(america['cases'])}}
+              </p>
+            </div>
+            <div class="active_cases doj-card__cases">
+              <h4 class="text-warning">Active Cases</h4>
+              <p>
+                {{"{:,.0f}".format(america['active'])}}
+              </p>
+            </div>
+            <div class="total_deaths doj-card__cases">
+              <h4 class="text-danger">Total Deaths</h4>
+              <p>
+                {{"{:,.0f}".format(america['deaths'])}}
+              </p>
+            </div>
+            <div class="revovered_cases doj-card__cases">
+              <h4 class="text-success">Recovered Cases</h4>
+              <p>
+                {{"{:,.0f}".format(america['recovered'])}}
+              </p>
+            </div>
+          </div> <!--front-card-body-->   
+          <div class="doj-card__footer">
+            <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+          </div> 
+        </div>  <!--card-front end-->
+        
+        <div class="doj-card__side doj-card__side--back doj-card__side--back-1 ">
+          <div class="card__cta"> <!--CTA== call to action.. (CTA box)-->
+            
+            <h3 class="text-light bg-danger">{{america["countries"] | length}} Countries Affected Affected in America</h3>
+
+            <a href="/global" class="btn btn--white btn-card">View More on Global!</a>
+          </div>
+        </div> <!--card-back ends-->
+
+      </div>
+    </div>
+    <!-- All America -->
+
+  <!-- South America -->
+    <div class="col-sm-1 col-md-3 col-lg-3 "> 
+      <div class="doj-card">
+        
+        <div class="doj-card__side doj-card__side--front">
+          <div class="doj-card__picture doj-card__picture--1">
+            &nbsp;
+          </div>
+          <h4 class="doj-card__header">
+            <span class="doj-card__header-span doj-card__header-span--1 text-primary">
+                <a href="#">SOUTH AMERICA</a>
+              <img src="{{url_for('static', filename='images/sAmerica.jpg')}}" alt="" height="70px">
+            </span>
+          </h4>
+          <div class="doj-card__body">
+
+
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-dark">New Cases</h4>
+              <p>
+                {{"{:,.0f}".format(south_america['todayCases'])}}
+              </p>
+            </div>
+            <div class="total_cases doj-card__cases">
+              <h4 class="text-info">Total Cases</h4>
+              <p>
+                {{"{:,.0f}".format(south_america['cases'])}}
+              </p>
+            </div>
+            <div class="active_cases doj-card__cases">
+              <h4 class="text-warning">Active Cases</h4>
+              <p>
+                {{"{:,.0f}".format(south_america['active'])}}
+              </p>
+            </div>
+            <div class="total_deaths doj-card__cases">
+              <h4 class="text-danger">Total Deaths</h4>
+              <p>
+                {{"{:,.0f}".format(south_america['deaths'])}}
+              </p>
+            </div>
+            <div class="revovered_cases doj-card__cases">
+              <h4 class="text-success">Recovered Cases</h4>
+              <p>
+                {{"{:,.0f}".format(south_america['recovered'])}}
+              </p>
+            </div>
+          </div> <!--front-card-body-->   
+          <div class="doj-card__footer">
+            <small class="text-secondary"> Last Updated: 21 November 2020 </small>
+          </div> 
+        </div>  <!--card-front end-->
+         
+        <div class="doj-card__side doj-card__side--back doj-card__side--back-1 ">
+          <div class="card__cta"> <!--CTA== call to action.. (CTA box)-->
+            
+            <h3 class="text-light bg-danger">{{south_america["countries"] | length}} Countries Affected Affected in South America</h3>
+
+            <a href="/global" class="btn btn--white btn-card">View More on Global!</a>
+          </div>
+        </div> <!--card-back ends-->
+
+      </div>
+    </div>
+    <!-- South America -->
+
+
+  </div>
+  <!-- All Cards contaier -->
+
+  <!-- Corona is real section -->
+  <div class="container">
+
+    <section class="coro text-center ml-5">
+      <h2 class="text-danger mb-5 h1 bg- d-inline-block">
+        CORAONA VIRUS IS REAL
+      </h2>
+      
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators ">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+        </ol>
+        
+        <div class="carousel-inner">
+          
+          <div class="carousel-item active">
+            <img src="https://image.freepik.com/free-vector/stay-home-stop-coronavirus-design-with-covid-19-virus-cell-typography-letter_1314-2758.jpg" alt="First Slie" width="700rem">
+          </div>
+          
+          <div class="carousel-item ">
+            <img src="https://image.freepik.com/free-vector/covid-19-coronavirus-disease-how-protect-yourself-from-them-with-social-distancing_7891-542.jpg" alt="First Slie" width="700rem">
+          </div>
+          
+          <div class="carousel-item ">
+            <img src="https://image.freepik.com/free-vector/symptoms-covid-19-coronavirus-cartoon-style-infographic_1308-47051.jpg" alt="First Slie" width="700rem">
+          </div>
+          
+          <div class="carousel-item ">
+            <img src="https://image.freepik.com/free-vector/coronavirus-prevention-infographic_23-2148527118.jpg" alt="First Slie" width="700rem">
+          </div>
+          
+          <div class="carousel-item ">
+            <img src="https://image.freepik.com/free-vector/keep-your-distance-sign-collection_23-2148596612.jpg" alt="First Slie" width="700rem">
+          </div>
+          
+          <div class="carousel-item ">
+            <img src="https://image.freepik.com/free-vector/social-distancing-concept-with-christmas-characters_23-2148786857.jpg" alt="First Slie" width="700rem">
+        </div>
+        
+        <div class="carousel-item ">
+          <img src="https://image.freepik.com/free-vector/steps-cleaning-reusable-masks-infographic_23-2148612911.jpg" alt="First Slie" width="700rem">
+        </div>
+        
+        <div class="carousel-item ">
+          <img src="https://image.freepik.com/free-vector/coronavirus-prevention-poster-stores_23-2148614947.jpg" alt="First Slie" width="700rem">
+        </div>
+        
+        <!-- <div class="carousel-item ">
+          <img src="" alt="First Slie" width="700rem">
+        </div> -->       
+        
+      </div>
+      
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    
+  </section>
+</div>
+  <!-- Corona is real section -->
+
+  <!-- Contact Modal -->
+  <div id="contact" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content h1">
+
+      <div class="modal-header">
+        <h2 class="modal-title text-center">Get in Touch with Us!</h2>
+        <button class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <span class="col-md-1 offset-md-2 text-xs-center"><i class="fa fa-user bigicon"></i></span>
+          <div class="col-md-8">
+              <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
+          </div>
+      </div>
+      <div class="form-group">
+          <span class="col-md-1 offset-md-2 text-xs-center"><i class="fa fa-user bigicon"></i></span>
+          <div class="col-md-8">
+              <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group">
+          <span class="col-md-1 offset-md-2 text-xs-center"><i class="fa fa-envelope-o bigicon"></i></span>
+          <div class="col-md-8">
+              <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group">
+          <span class="col-md-1 offset-md-2 text-xs-center"><i class="fa fa-phone-square bigicon"></i></span>
+          <div class="col-md-8">
+              <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+          </div>
+      </div>
+
+      <div class="form-group">
+          <span class="col-md-1 offset-md-2 text-xs-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+          <div class="col-md-8">
+              <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <div class="col-md-12 text-xs-center">
+              <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+          </div>
+      </div>
+      </div>
+
+      <div class="modal-footer text-center">
+        <h3 class="text-center">HCI PROJECT, University Of The Gambia</h3>
+      </div>
+
+    </div>
+    </div>
+  </div>
+  <!-- Contact Modal -->
+
+
+  {% include "footer.html" %}
+
+  <script>
+    
+
+    let update = "{{global_data['updated']}}";
+    let finalDate = parseInt(update);
+    finalDate = new Date(finalDate);
+    let global_update = document.querySelector("#global_update");
+    let finalFinal = finalDate.getDate() +" - "+ finalDate.getMonth() +" - "+ finalDate.getFullYear() +"-"+ finalDate.getTime() ;
+    global_update.innerHTML = finalFinal;
+
+  </script>
+{% endblock large_content %}

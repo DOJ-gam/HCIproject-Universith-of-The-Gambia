@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% include "header.html" %}
+
+{% block large_content %}
+  
+<div class="header"></div>
+
+
+<h2 class="alert alert-success text-uppercase">
+            
+    {% if page_title == 'africa' %}
+
+    <img src="{{url_for('static', filename = 'images/africa.png')}}" height="35px" alt="">
+    {{page_title}}: {{all_continent_data | length}} Countries Affected
+    <a href="#" class="close" data-dismiss="alert">X</a>
+    
+    {% endif %}
+
+    {% if page_title == 'europe' %}
+     
+    <img src="{{url_for('static', filename = 'images/europe.png')}}" height="35px" alt="">
+    {{page_title}}: {{all_continent_data | length}} Countries Affected
+    <a href="#" class="close" data-dismiss="alert">X</a>
+    
+    {% endif %}
+
+    {% if page_title == 'asia' %}
+     
+    <img src="{{url_for('static', filename = 'images/asia.png')}}" height="35px" alt="">
+    {{page_title}}: {{all_continent_data | length}} Countries Affected
+    <a href="#" class="close" data-dismiss="alert">X</a>
+    
+    {% endif %}
+
+    {% if page_title == 'america' or page_title == 'north america' or page_title == 'south america' %}
+     
+    <img src="{{url_for('static', filename = 'images/america.png')}}" height="35px" alt="">
+    {{page_title}}: {{all_continent_data | length}} Countries Affected
+    <a href="#" class="close" data-dismiss="alert">X</a>
+    
+    {% endif %}
+        
+</h2>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <table class="table table-bordered text-center">
+
+            <tr>
+            <td>Population :</td>
+            <td>{{"{:,.0f}".format(continent_stats['population'])}}</td>
+            </tr>
+
+            <tr>
+            <td>Total Tests :</td>
+            <td>{{"{:,.0f}".format(continent_stats['tests'])}}</td>
+            </tr>
+
+            <tr>
+            <td>Critical Cases :</td>
+            <td>{{"{:,.0f}".format(continent_stats['critical'])}}</td>
+            </tr>
+
+        </table>
+    </div>    
+
+    <div class="col-md-4">
+        <table class="table table-bordered text-center">
+
+            <tr>
+            <td>New Cases :</td>
+            <td>{{"{:,.0f}".format(continent_stats['todayCases'])}}</td>
+            </tr>
+
+            <tr>
+            <td>New Recovery :</td>
+            <td>{{"{:,.0f}".format(continent_stats['todayRecovered'])}}</td>
+            </tr>
+
+            <tr>
+            <td>Latest Deaths :</td>
+            <td>{{"{:,.0f}".format(continent_stats['todayDeaths'])}}</td>
+
+            </tr>
+        </table>
+
+    </div>            
+
+     <div class="col-md-4">
+        <table class="table table-bordered text-center">
+
+            <tr>
+                <td>Total Cases :</td>
+                <td>{{"{:,.0f}".format(continent_stats['cases'])}}</td>
+                </tr>
+
+                <tr>
+                <td>Active Cases :</td>
+                <td>{{"{:,.0f}".format(continent_stats['active'])}}</td>
+                </tr>
+
+                <tr>
+                <td>Recovered Cases :</td>
+                <td>{{"{:,.0f}".format(continent_stats['recovered'])}}</td>
+            </tr>
+            
+        </table>
+     </div>
+    
+
+     <div class="col-md-12">
+
+        <form action="/search" class="form-group">
+            <div>
+                <input class="form-control text-lg" type="text" placeholder="Search Country" name="country" />
+            </div>
+        </form>
+        
+    </div>
+
+
+    <div class="col-md-12">
+        <table class="table table-hover table-bordered text-center">
+            <thead class="bg-info text-light">
+                <tr>
+                    <th>Country</th>
+                    <th>Total Cases</th>
+                    <th>Active Cases</th>
+                    <th>Recovered</th>
+                    <th>Deaths</th>
+                </tr>
+            </thead>
+
+            {% for data in all_continent_data %}
+              
+            <tbody>
+                <tr>
+
+                    <td class="text-left">
+                        {{loop.index}}.
+                        <a href="/countries/{{data['country']}}" class="text-dark">
+                            {{data['country']}}
+                        </a>
+                        <img src="{{data['countryInfo']['flag']}}" height="15px" alt="">
+                    </td>
+
+                    <td> {{"{:,.0f}".format(data['cases'])}} </td>
+                    <td> {{"{:,.0f}".format(data['active'])}} </td>
+                    <td> {{"{:,.0f}".format(data['recovered'])}} </td>
+                    <td> {{"{:,.0f}".format(data['deaths'])}} </td>
+
+                </tr>
+            </tbody>
+
+            {% endfor %}
+
+
+        </table>
+
+
+
+    </div>
+
+
+</div>
+
+
+{% include "footer.html" %}
+{% endblock large_content %}

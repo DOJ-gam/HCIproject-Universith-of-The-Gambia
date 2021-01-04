@@ -1,0 +1,10 @@
+.coro {
+  padding: 10rem 0;
+  background-color: #5d6d7e;
+  transform: skewY(-8deg) !important;
+  font-size: 3rem;
+  margin: 4rem 0 8rem 0;
+}
+.coro > * {
+  transform: skewY(8deg);
+}

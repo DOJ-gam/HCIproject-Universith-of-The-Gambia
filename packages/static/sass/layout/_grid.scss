@@ -1,0 +1,54 @@
+
+// We use rem.. because we are relating to the style we put in the body in the base file..
+.doj-row{
+    max-width: $grid-width;
+    // background-color: #eee;
+    margin: 0 auto; //we use this to center block element inside other block elements..(top, bottom=0,.. left, right=auto)
+
+    // we use the pseudo selector to select the last child of the row element--eg..-(.row:last-child()).. 
+    //but we can also select everything else but the last child..(for bottom margin)
+    &:not(:last-child){
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix; //mixin
+
+    // we select elements that have classes that start with col-
+    [class^="col-"]{
+        // background-color: orangered;
+        float: left; //because this column is floated, it now has a height of 0px.. because all child elements are floated, so height collapses and bcomz 0..
+        // to fix we use the clearfix hack... Clearfix appends an after pseudo element after the elemet, which will then clear the float.
+
+        &:not(:last-child){
+            margin-right: $gutter-horizontal;
+        }     
+    }
+
+    .col-1-of-2{
+        width: calc( ( 100% - #{$gutter-horizontal} ) / 2); //to calculate sass variables in calc, we need to add #, and put them btw {}
+    }
+
+
+    .col-1-of-3{
+        width: calc( (100% - 2 * #{$gutter-horizontal}) / 3);
+    }
+
+    .col-2-of-3{ //here we multiply 2 by the width of the normal 1 of 3 plus the gutter space..
+        width: calc( 2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+    }
+
+    .col-1-of-4{
+        width: calc( (100% - 3 * #{$gutter-horizontal}) / 4);
+    }
+
+    .col-2-of-4{
+        width: calc( 2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+    }
+     
+    .col-3-of-4{
+        width: calc( 3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + (2 * #{$gutter-horizontal}) );
+    }
+
+
+
+}

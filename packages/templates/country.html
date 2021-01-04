@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% include "header.html" %}
+
+{% block large_content %}
+  
+<div class="header"></div>
+
+
+<div class="jumbotron page-header" align=center>
+    <div class="row bg-info">
+        <div class="col-md-6">
+            <img src="{{country['countryInfo']['flag']}}" width="100px" alt="Flag of {{country['country']}}">
+        </div>
+        <div class="col-md-6">
+            <h1 class="">{{country['country']}}</h1>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-md-12">  
+            <form action="/search" class="form-group">
+                <div>
+                    <input class="form-control text-lg" type="text" placeholder="Search Country" name="country" />
+                </div>
+            </form>
+            
+    </div>
+
+    <div class="col-md-6">
+        <table class="table table-bordered text-center">
+
+            <tr>
+            <td>Total Tests :</td>
+            <td>{{"{:,.0f}".format(country['tests'])}}</td>
+            </tr>
+
+            <tr>
+            <td>New Cases :</td>
+            <td>{{"{:,.0f}".format(country['todayCases'])}}</td>
+            </tr>
+
+            <tr>
+            <td>New Recovery :</td>
+            <td>{{"{:,.0f}".format(country['todayRecovered'])}}</td>
+            </tr>
+            <tr>
+            <td>Latest Deaths :</td>
+            <td>{{"{:,.0f}".format(country['todayDeaths'])}}</td>
+            </tr>
+            <tr>
+            <td>Critical Cases :</td>
+            <td>{{"{:,.0f}".format(country['critical'])}}</td>
+            </tr>
+        </table>
+    </div>    
+
+    <div class="col-md-6">
+        <table class="table table-bordered text-center">
+
+            <tr>
+            <td>Population :</td>
+            <td>{{"{:,.0f}".format(country['population'])}}</td>
+            </tr>
+
+            <tr>
+            <td>Total Cases :</td>
+            <td>{{"{:,.0f}".format(country['cases'])}}</td>
+            </tr>
+
+            <tr>
+            <td>Active Cases :</td>
+            <td>{{"{:,.0f}".format(country['active'])}}</td>
+            </tr>
+
+            <tr>
+            <td>Recovered Cases :</td>
+            <td>{{"{:,.0f}".format(country['recovered'])}}</td>
+            </tr>
+
+            <tr>
+            <td>Continent :</td>
+            <td>{{country['continent']}}</td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+
+
+{% include "footer.html" %}
+{% endblock large_content %}

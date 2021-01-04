@@ -1,0 +1,51 @@
+
+
+.panel{
+
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 10; /* Make them all have the same size(all that are in the flexbox)*/
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+    background-color: $color-grey-light-2;
+
+    &--1{
+        background-image: url('../images/amy.jpeg');
+    }
+
+    &--2{
+        background-image: url('https://image.freepik.com/free-vector/flat-follow-us-background_23-2148052067.jpg');
+    }
+
+    &--3{
+        background-image: url('../images/dojbg.png');
+    }
+
+    h1{
+
+        font-size: 24px;
+        opacity: 0;
+        margin: 0;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    
+    &.panel.active{
+        flex: 40;
+    }
+
+    &.active h1{
+        opacity: 1;
+        transition: opacity 0.3s ease-in 0.4s;
+            /*              duration,     delay */
+    }
+}
+

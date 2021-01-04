@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block large_content %}
+  
+
+<div class="col-md-12">
+    <table class="table table-hover table-bordered text-center">
+        <thead class="bg-info text-light">
+            <tr>
+                <th>Country</th>
+                <th>Total Cases</th>
+                <th>Active Cases</th>
+                <th>Recovered</th>
+                <th>Deaths</th>
+            </tr>
+        </thead>
+
+        {% for data in data %}
+          
+        <tbody>
+            <tr>
+
+                <td class="text-left">
+                    {{loop.index}}.
+                    <a href="/countries/{{data['country']}}" class="text-dark">
+                        {{data['country']}}
+                    </a>
+                    <img src="{{data['countryInfo']['flag']}}" height="15px" alt="">
+                </td>
+
+                <td> {{"{:,.0f}".format(data['cases'])}} </td>
+                <td> {{"{:,.0f}".format(data['active'])}} </td>
+                <td> {{"{:,.0f}".format(data['recovered'])}} </td>
+                <td> {{"{:,.0f}".format(data['deaths'])}} </td>
+
+            </tr>
+        </tbody>
+
+        {% endfor %}
+
+
+    </table>
+
+
+
+</div>
+
+
+{% endblock large_content %}

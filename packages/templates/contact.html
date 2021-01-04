@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block head %}
+  <style>
+      .doj-form{
+          margin-bottom: 10px;
+      }
+      .social-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .doj-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 75px;
+            margin: 20px;
+        }
+
+        .doj-card{
+            margin-top: 30px;
+        }
+  </style>
+{% endblock head %}
+
+{% block title %}
+  Contact Page
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="container">  
+    <div class="row">
+
+        <div class="col-md-9">
+            <form action="/contact" method="POST" >
+
+                <div class="card doj-card">
+                    <div class="card-header">
+                        <h1 class="text-center text-light bg-info">CONTACT ME!</h1>
+                    </div>
+                    <div class="card-body">
+    
+                        <div class="formgroup doj-form">
+                            <label for="name">Full Name:</label>
+                            <input type="text" class="form-control" placeholder="Example: Fatou Sonko" required name="name">
+                        </div>
+                        <div class="formgroup doj-form">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" placeholder="Example: fatousonko123@gmail.com" required name="email">
+                        </div>
+                        <div class="formgroup doj-form">
+                            <label for="phone">Phone:</label>
+                            <input type="tel" class="form-control" placeholder="Example: 3330000  or   002203330000" required name="phone">
+                        </div>
+                        <div class="formgroup doj-form">
+                            <label for="message">Enter Your Message:</label>
+                            <textarea class="form-control" name="message" id="" cols="10" rows="10" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="formgroup col-md-12 text-right">
+                            <button type="submit" class="btn btn-info btn-lg" name="submit">Send</button>
+                        </div>
+    
+                    </div>
+                    <div class="card-footer text-center">
+                            <a href="#">
+                            <img class="doj-img" src="{{url_for('static', filename = 'images/facebook.png')}}"alt="" />
+                            </a>
+
+                            <a href="">
+                            <img class="doj-img" src="{{url_for('static', filename = 'images/instagram.png')}}"  alt="" />
+                            </a>
+
+                            <a href="">
+                            <img class="doj-img" src="{{url_for('static', filename = 'images/linkedin.png')}}"  alt="" />
+                            </a>
+
+                            <a href="">
+                            <img class="doj-img" src="{{url_for('static', filename = 'images/twitter.png')}}" alt="" />
+                            </a>
+                            
+                    </div>
+                </div>
+            </div>
+            </form>
+
+        
+    </div>
+</div>
+
+
+{% endblock content %}

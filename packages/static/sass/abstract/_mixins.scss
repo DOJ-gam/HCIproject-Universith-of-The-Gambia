@@ -1,0 +1,8 @@
+@mixin clearfix {
+    
+    &::after{
+        content: ""; // always required..
+        display: table;
+        clear: both; // clear left and right
+    }
+}
